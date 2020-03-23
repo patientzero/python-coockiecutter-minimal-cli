@@ -24,4 +24,6 @@ def {{ cookiecutter.command_group_name }}(log_level):
 @{{ cookiecutter.command_group_name  }}.command()
 @click.option("--log-dir", help="Output directory", required=True)
 def {{ cookiecutter.first_command_name }}(log_dir):
-    pass
+    logger = logging.getLogger(f"py.{CLI_NAME}")
+    logger.info(f'use pathlib to write to {log_dir}')
+

@@ -35,13 +35,13 @@ pip install click
 
 ### **Directly from github**
 ```
-cookiecutter -o outdir https://github.com/patientzero/cockiecutter-minimal-cli
+cookiecutter -o outdir https://github.com/patientzero/python-cockiecutter-minimal-cli
 ```
 ### **From the cloned directory:**
 ```
-git clone https://github.com/patientzero/cockiecutter-minimal-cli.git
-cd cockiecutter-minimal-cli
-cookiecutter -o outdir ~/projects/cookiecutter-cli/
+git clone https://github.com/patientzero/python-cockiecutter-minimal-cli.git
+cd python-cockiecutter-minimal-cli
+cookiecutter -o outdir ~/projects/python-cockiecutter-minimal-cli
 
 ```
 ### **Options && default values**:
@@ -61,6 +61,13 @@ cookiecutter -o outdir ~/projects/cookiecutter-cli/
 ## General use of generated cli:
 ```
 python -m module_name --option1 someinput --option2 somemoreinput
+```
+## Example call of first generated method:
+```
+cd outdir
+python -m command -l INFO helloworld --log-dir /test/logs
+# output:
+# [2020-03-23 15:39:41,881] INFO cli.py: use pathlib to write to /test/logs
 ```
 
 You can make new commands based on the provided example (helloworld).
