@@ -1,4 +1,4 @@
-# cockiecutter-minimal-cli
+# Python cockiecutter minimal cli template
 
 This is an absolute minimal boilerplate cli code as I use it in many of my projects
 where fast iteration and exploration is the key while maintaining order and versioning commands
