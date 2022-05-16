@@ -7,10 +7,13 @@ I prefer this way of working to the use of iPython notebooks, especially as soon
 to experimenting.
 Command line arguments with proper help texts are somewhat "self documenting" which can be useful, especially if you wrote
 the code a while back.
+
 ## Features:
+
 * logging namespace
 * set log level on cli
 * boilerplate cli generation
+
 ## Requirements:
 
 You need cookiecutter installed (for example from here https://github.com/cookiecutter/cookiecutter)
@@ -51,12 +54,16 @@ cookiecutter -o outdir ~/projects/python-cockiecutter-minimal-cli
     "cli_name": "my_cli",
     "first_command_name": "helloworld",
     "file_name": "cli.py"
+    "username": "username",
+    "slurm_batch_script": ""
 ```
 * module name: name of the module containing your cli
 * command_group_name: Name of the method on which the @click.group decorator is placed, used for adding more commands
 * cli_name: Internal name for your program. Mainly used for logging.
 * first_command_name: Name of first example/boilerplate method
-* file_name": Name of the file containing your cli definition
+* file_name: Name of the file containing your cli definition
+* username: your username on the cluster
+* slurm_batch_script: output name for a slurm batch job script, if none is given, the file will not be created
 
 ## General use of generated cli:
 ```

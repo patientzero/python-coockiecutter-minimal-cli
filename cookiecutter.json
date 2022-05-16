@@ -4,6 +4,6 @@
     "cli_name": "my_cli",
     "first_command_name": "helloworld",
     "file_name": "cli.py",
-    "username": "bayerlse",
+    "username": "username",
     "slurm_batch_script": ""
 }
