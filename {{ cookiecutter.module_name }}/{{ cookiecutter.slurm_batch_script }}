@@ -1,0 +1,28 @@
+#!/bin/bash
+#SBATCH --job-name=run_{{ cookiecutter.module_name  }}
+#SBATCH --output=sbatch-%j.out
+#SBATCH --error=sbatch-%j.out
+#SBATCH --open-mode=append
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=2
+#SBATCH --mem-per-cpu=5G
+#SBATCH --gres=gpu:1
+#SBATCH --qos=gpubasic
+#SBATCH --chdir=/mnt/md0/user/{{ cookiecutter.username }}/
+
+echo "Job submitted to partition ${SLURM_JOB_PARTITION} on ${SLURM_CLUSTER_NAME}"
+echo "Job name: ${SLURM_JOB_NAME}, Job ID: ${SLURM_JOB_ID}"
+echo "Requested ${SLURM_CPUS_ON_NODE} CPUs on compute node $(hostname)"
+echo "=================================================================="
+
+PROJECT_ROOT=/mnt/md0/user/{{ cookiecutter.username }}
+cd $PROJECT_ROOT
+
+# For debugging Cuda errors
+# export CUDA_LAUNCH_BLOCKING=1
+
+source /mnt/md0/user/{{ cookiecutter.username }}/.virtualenvs/{{ cookiecutter.module_name }}/bin/activate
+
+srun python -m {{ cookiecutter.module_name }} --help 
+

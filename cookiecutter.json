@@ -3,5 +3,7 @@
     "command_group_name": "cli",
     "cli_name": "my_cli",
     "first_command_name": "helloworld",
-    "file_name": "cli.py"
+    "file_name": "cli.py",
+    "username": "bayerlse",
+    "slurm_batch_script": ""
 }
